@@ -127,7 +127,7 @@ if (loginForm) {
 // Teacher Confirmation
 if (adminForm) {
   if(!studentR){
-    window.location = '/'
+    window.location = '../index.html'
   }
   else{
   let teacherName = document.getElementById('teacherName');
@@ -222,7 +222,7 @@ if (adminForm) {
 // Info Box
 if (infobox) {
   if(!studentR){
-    window.location = '/'
+    window.location = '../index.html'
   }else{
   function infoBox() {
     let DatInLocal = JSON.parse(localStorage.getItem("teacherPermission"));
@@ -236,7 +236,7 @@ if (infobox) {
 // quiz Screen
 if (window.location.pathname === "/pages/quiz-start.html") {
     if(!studentR){
-    window.location = '/'
+    window.location = '../index.html'
   }else{
   // ------------------ DOM ELEMENTS (as you already had) ------------------
   const elements = {
@@ -280,7 +280,7 @@ if (window.location.pathname === "/pages/quiz-start.html") {
       if (!studentR || !studentR.uid) {
         showErrorMessage("Student not logged in.");
         setTimeout(() => {
-          window.location = '/'
+          window.location = '../index.html'
         }, 2000);
         return null;
       }
@@ -558,7 +558,7 @@ if (window.location.pathname === "/pages/quiz-start.html") {
 // Result Of Quiz
 if (window.location.pathname === "/pages/Result.html") {
     if(!studentR){
-    window.location = '/'
+    window.location = '../index.html'
   }else{
   async function showResult() {
 
@@ -723,4 +723,5 @@ window.addEventListener('offline', () => {
 // Detect when user goes offline
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
+
 });
