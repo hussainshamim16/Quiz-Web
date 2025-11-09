@@ -418,7 +418,7 @@ if (window.location.pathname === "/pages/quiz-start") {
           loader.classList.add('none')
         }
 
-        window.location = './pages/Result.html'
+        window.location = '/pages/Result.html'
       }
     });
   }
@@ -724,6 +724,7 @@ window.addEventListener('offline', () => {
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
 });
+
 
 
 
