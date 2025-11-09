@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <!-- ==================== Signup SCREEN ==================== -->
+  <div class=" Signup flex center-align">
+    <form id='signup' class="flex forms sign-up-container pg-width">
+    <h1 class="text-g">Sign Up</h1>
+    <input type="Name" name="NameOFteacher" id="teacherEmailNameSignup" placeholder="Name : Muhammad Hussain Shamim">
+    <input type="email" name="emailOFteacher" id="teacherEmailSignup" placeholder="Email : hussainshamimxyz@gmai.com">
+    <select id="batch" required>
+        <option value="Select Your Batch" disabled selected>Select Your Batch</option>
+        <option value="Batch01">Batch 01</option>
+    </select>
+    <select id="trainer" required>
+        <option value="Select Your Tranier" disabled selected>Select Your Tranier</option>
+        <option value="Muhammad Hussain Shamim">Muhammad Hussain Shamim</option>
+        <option value="Arzoo Shamim">Arzoo Shamim</option>
+    </select>
+    <input type="password" name="passwordOFteacher" id="teacherPasswordSignup" placeholder="Password : **********">
+    <button type="submit" class="cs-btn">Sign Up</button>
+    <p>If You Have Already An Account <a href="/">Login</a></p>
+    </form>
+  </div>
+
+<div id="loaderParent" class="flex none">
+  <span class="loader"></span>
+</div>
+
+
+  <div id="errorPopup" class="flex none">
+    <div class="errobox">
+      <span class="errormessage">If You Have A Not Account Sign Up</span>
+      <button class="donebtn cs-btn" id="errorBtn">Sure</button>
+    </div>
+  </div>
+
+    <div id="Offlne" class="flex none">
+    <div class="offlineBox">
+      <span class="errormessage">
+        😥
+        Your internet connection is lost. Please check your network.
+      </span>
+    </div>
+  </div>
+  
+  <script src="../javascript/backend.js" type="module"></script>
+  <!-- <script src="../javascript/script.js"></script> -->
+</body>
+</html>

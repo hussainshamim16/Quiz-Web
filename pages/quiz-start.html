@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Start</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <div class="quiz_box pg-width center-align flex">
+        <div class="container-quiz quizcontainer flex center-align">
+            <header class="flex">
+                <div class="title text-g" id="courseName">M. Hussain Shamim</div>
+                <div class="timer flex">
+                    <div class="time_left_txt">Time Left</div>
+                    <div class="timer_sec">50</div>
+                </div>
+                <div class="time_line"></div>
+            </header>
+            <section class="flex">
+                <div class="que_text">1. What does CSS stand for?</div>
+                <div class="option_list"><div class="option disabled"><span>Creative Style Sheets</span></div><div class="option correct disabled"><span>Cascading Style Sheets</span><div class="icon tick"><i class="fas fa-check"></i></div></div><div class="option disabled"><span>Colorful Style Sheets</span></div><div class="option disabled"><span>Computer Style Sheets</span></div></div>
+            </section>
+            <footer class="flex">
+                <div class="total_que">01 | 30</div>
+                <button class="next_btn cs-btn">Next Question</button>
+            </footer>
+        </div>
+    </div>
+
+<div id="loaderParent" class="flex none">
+  <span class="loader"></span>
+</div>
+
+  <!-- ---------- INFO BOX before starting quiz ---------- -->
+   <div class="btnParent flex " id="btnParent">       
+    <button class="restart cs-btn continueBtn">Are You Ready</button>
+   </div>
+  <!-- ---------- RESULT BOX ---------- -->
+
+  <div id="errorPopup" class="flex none">
+    <div class="errobox">
+      <span class="errormessage">If You Have A Not Account Sign Up</span>
+      <button class="donebtn cs-btn" id="errorBtn">Sure</button>
+    </div>
+  </div>
+
+    <div id="Offlne" class="flex none">
+    <div class="offlineBox">
+      <span class="errormessage">
+        😥
+        Your internet connection is lost. Please check your network.
+      </span>
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script type="module" src="../javascript/backend.js"></script>
+</body>
+</html>

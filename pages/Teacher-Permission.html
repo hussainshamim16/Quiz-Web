@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Permission</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+
+    <div class="admin_screen flex pg-width">
+    <form id="adminForm" class="flex forms admin-container">
+      <h1 class="text-g">Trainer Permission</h1>
+      <input type="text" id="teacherName" placeholder="Teacher Name" minlength="3" required>
+      <select id="courseName" required>
+        <option value="" disabled selected>Select Course</option>
+        <option value="html">HTML</option>
+        <option value="css">Css</option>
+        <option value="javascript">JavaScript</option>
+        <option value="firebase">Firebase</option>
+      </select>
+      <input type="number" id="quizDuration" placeholder="Duration (seconds)" min="5" required>
+      <input type="number" id="quizQuestion" placeholder="Question Count" min="1" max="40" required>
+      <input type="password" id="NumberWord" placeholder="Teacher Password" required>
+      <button type="submit"  class="cs-btn">Set Quiz</button>
+    </form>
+  </div>
+
+  <div id="loaderParent" class="flex none">
+    <span class="loader"></span>
+  </div>
+
+
+  <div id="errorPopup" class="flex none">
+    <div class="errobox">
+      <span class="errormessage">If You Have A Not Account Sign Up</span>
+      <button class="donebtn cs-btn" id="errorBtn">Sure</button>
+    </div>
+  </div>
+
+  <div id="Offlne" class="flex none">
+    <div class="offlineBox">
+      <span class="errormessage">
+        😥
+        Your internet connection is lost. Please check your network.
+      </span>
+    </div>
+  </div>
+
+  <script src="../javascript/backend.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <!-- ==================== RESULT BOX ==================== -->
+    <div class="resultPage pg-width center-align flex">
+<div class="result_box">
+  <div class="circular-progress">
+    <span class="progress-value ">0%</span>
+  </div>
+
+  <h2 class="result_message text-center">Your Result</h2>
+
+  <div class="buttons">
+    <a href="./quiz-start.html" class="restart cs-btn">Restart</a>
+    <a href="./Teacher-Permission.html" class="quit cs-btn">Quit</a>
+  </div>
+</div>
+</div>
+
+
+<div id="loaderParent" class="flex none">
+  <span class="loader"></span>
+</div>
+
+
+  <div id="errorPopup" class="flex none">
+    <div class="errobox">
+      <span class="errormessage">If You Have A Not Account Sign Up</span>
+      <button class="donebtn cs-btn" id="errorBtn">Sure</button>
+    </div>
+  </div>
+
+    <div id="Offlne" class="flex none">
+    <div class="offlineBox">
+      <span class="errormessage">
+        😥
+        Your internet connection is lost. Please check your network.
+      </span>
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script type="module" src="../javascript/backend.js"></script>
+  <script >
+  </script>
+</body>
+</html>

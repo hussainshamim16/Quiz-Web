@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+
+    <!-- ==================== INFO BOX ==================== -->
+  <div class="info_box flex" id="infobox">
+    <div class="info_box-container forms flex">
+        <h1 class="info-title text-g">Rules of this Quiz</h1>
+        <div class="info-list">
+        <div class="info">1. You will have <span id="infoSeconds">30</span> seconds per question.</div>
+        <div class="info">2. You Have <span id="questionCount">12</span> Questions For The <span id="Selectescourse">HTMl</span> Quiz.</div>
+        <div class="info">3. You can't select any option once time goes off.</div>
+        <div class="info">4. You can't exit while playing.</div>
+        <div class="info">5. Once you select an answer, it can't be undone.</div>
+        </div>
+        <div class="buttons flex gap">
+        <a href="./Teacher-Permission.html" class="quit cs-btn">Exit Quiz</a>
+        <a href="./quiz-start.html" class="restart cs-btn">Continue</a>
+        </div>
+    </div>
+  </div>
+
+  <div id="Offlne" class="flex none">
+    <div class="offlineBox">
+      <span class="errormessage">
+        😥
+        Your internet connection is lost. Please check your network.
+      </span>
+    </div>
+  </div>
+
+  <script src="../javascript/backend.js" type="module"></script>
+</body>
+</html>

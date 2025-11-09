@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <!-- ==================== Login SCREEN ==================== -->
+  <div class="Login flex pg-width center-align">
+    <form id='login' class="flex forms">
+      <h1 class="text-g">Login</h1>
+      <input type="email" name="emailOFteacher" id="teacherEmailLogin" placeholder="Email : hussainshamimxyz@gmai.com">
+      <input type="password" name="passwordOFteacher" id="teacherPasswordLogin"
+        placeholder="Password : *****************">
+      <button type="submit" class="cs-btn">Login</button>
+      <p>If You Have A Not Account <a href="./pages/Signup.html">Sign Up</a></p>
+    </form>
+  </div>
+
+
+  <div id="loaderParent" class="flex none">
+    <span class="loader"></span>
+  </div>
+
+  <div id="errorPopup" class="flex none">
+    <div class="errobox">
+      <span class="errormessage">If You Have A Not Account Sign Up</span>
+      <button class="donebtn cs-btn" id="errorBtn">Sure</button>
+    </div>
+  </div>
+
+    <div id="Offlne" class="flex none">
+    <div class="offlineBox">
+      <span class="errormessage">
+        😥
+        Your internet connection is lost. Please check your network.
+      </span>
+    </div>
+  </div>
+
+  <script src="./javascript/backend.js" type="module"></script>
+  <!-- <script src="../javascript/script.js"></script> -->
+</body>
+
+</html>
