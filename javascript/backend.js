@@ -418,7 +418,7 @@ if (window.location.pathname === "/pages/quiz-start") {
           loader.classList.add('none')
         }
 
-        window.location = '/pages/Result'
+        window.location = '/pages/result'
       }
     });
   }
@@ -556,7 +556,7 @@ if (window.location.pathname === "/pages/quiz-start") {
 }
 
 // Result Of Quiz
-if (window.location.pathname === "/pages/Result") {
+if (window.location.pathname === "/pages/result") {
     if(!studentR){
     window.location = '../index.html'
   }else{
@@ -724,6 +724,7 @@ window.addEventListener('offline', () => {
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
 });
+
 
 
 
