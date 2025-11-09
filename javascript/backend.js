@@ -368,16 +368,20 @@ if (window.location.pathname === "/pages/quiz-start.html") {
   // ------------------ INFO → Start Quiz (Start button) ------------------
   elements.continueBtn?.addEventListener('click', () => {
     if (!quizData) {
-      showErrorMessage("Quiz data not loaded.");
-      return;
+    console.log("Data Nhi AYA")
+    //   showErrorMessage("Quiz data not loaded.");
+    //   return;
+    }else{
+    console.log("Data Nhi AYA")
+      
     }
-    document.getElementById("btnParent").classList.add("remove")
-    resetQuizState();
-    showQuestion(0);
-    queCounter(1);
-    startTimer(quizData.duration);
-    startTimerLine(0);
-    document.getElementById('courseName').textContent = quizData.name;
+    // document.getElementById("btnParent").classList.add("remove")
+    // resetQuizState();
+    // showQuestion(0);
+    // queCounter(1);
+    // startTimer(quizData.duration);
+    // startTimerLine(0);
+    // document.getElementById('courseName').textContent = quizData.name;
   });
 
   // ------------------ NEXT BUTTON ------------------
@@ -723,5 +727,6 @@ window.addEventListener('offline', () => {
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
 });
+
 
 
