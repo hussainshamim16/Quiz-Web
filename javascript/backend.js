@@ -369,7 +369,6 @@ if (window.location.pathname === "/pages/quiz-start.html") {
   elements.continueBtn?.addEventListener('click', () => {
     if (!quizData) {
       showErrorMessage("Quiz data not loaded.");
-      fetchData()
       return;
     }
     document.getElementById("btnParent").classList.add("remove")
@@ -724,4 +723,5 @@ window.addEventListener('offline', () => {
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
 });
+
 
