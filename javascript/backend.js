@@ -35,7 +35,7 @@ import { questions } from "./question.js";
 // SIGNUP
 if (signupForm) {
   if (studentR) {
-    window.location.href = "/pages/teacher-permission.html";
+    window.location.href = "/pages/teacher-permission";
   }else{
   signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -71,7 +71,7 @@ if (signupForm) {
 
       if (loader) loader.classList.add('none');
 
-      window.location.href = "/pages/teacher-permission.html";
+      window.location.href = "/pages/teacher-permission";
 
     } catch (error) {
       showErrorMessage(error.code);
@@ -83,7 +83,7 @@ if (signupForm) {
 // LOGIN
 if (loginForm) {
   if (studentR) {
-    window.location.replace("/pages/teacher-permission.html");
+    window.location.replace("/pages/teacher-permission");
   }else{
   loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -113,7 +113,7 @@ if (loginForm) {
       }
 
       if (loader) loader.classList.add('none');
-      window.location.href = "/pages/Teacher-Permission.html";
+      window.location.href = "/pages/Teacher-Permission";
 
     } catch (error) {
       showErrorMessage(error.code)
@@ -171,7 +171,7 @@ if (adminForm) {
             quizsawaal: quizQuestion.value,
           }))
 
-          window.location.href = "/pages/info.html";
+          window.location.href = "/pages/info";
         }
 
         const pehlyYeQuizDeyDeaHEyStudentNey = snapshot.docs.find(async doc => {
@@ -201,7 +201,7 @@ if (adminForm) {
                 quizsawaal: quizQuestion.value,
               }))
 
-              window.location.href = "/pages/info.html";
+              window.location.href = "/pages/info";
             }
           }
         });
@@ -280,7 +280,7 @@ if (window.location.pathname === "/pages/quiz-start") {
       if (!studentR || !studentR.uid) {
         showErrorMessage("Student not logged in.");
         setTimeout(() => {
-          window.location = '../index.html'
+          window.location = '../index'
         }, 2000);
         return null;
       }
@@ -418,7 +418,7 @@ if (window.location.pathname === "/pages/quiz-start") {
           loader.classList.add('none')
         }
 
-        window.location = '/pages/Result.html'
+        window.location = '/pages/Result'
       }
     });
   }
@@ -556,7 +556,7 @@ if (window.location.pathname === "/pages/quiz-start") {
 }
 
 // Result Of Quiz
-if (window.location.pathname === "/pages/Result.html") {
+if (window.location.pathname === "/pages/Result") {
     if(!studentR){
     window.location = '../index.html'
   }else{
@@ -724,6 +724,7 @@ window.addEventListener('offline', () => {
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
 });
+
 
 
 
