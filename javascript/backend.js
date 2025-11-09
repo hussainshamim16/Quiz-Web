@@ -366,7 +366,7 @@ if (window.location.pathname === "/pages/quiz-start.html") {
   fetchData()
 
   // ------------------ INFO → Start Quiz (Start button) ------------------
-  elements.continueBtn?.addEventListener('click', () => {
+  document.getElementById("areyouready").addEventListener('click', () => {
     if (!quizData) {
     console.log("Data Nhi AYA")
     //   showErrorMessage("Quiz data not loaded.");
@@ -727,6 +727,7 @@ window.addEventListener('offline', () => {
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
 });
+
 
 
 
