@@ -113,7 +113,7 @@ if (loginForm) {
       }
 
       if (loader) loader.classList.add('none');
-      window.location.href = "./Teacher-Permission.html";
+      window.location.href = "/pages/Teacher-Permission.html";
 
     } catch (error) {
       showErrorMessage(error.code)
@@ -171,7 +171,7 @@ if (adminForm) {
             quizsawaal: quizQuestion.value,
           }))
 
-          window.location.href = "./info.html";
+          window.location.href = "/pages/info.html";
         }
 
         const pehlyYeQuizDeyDeaHEyStudentNey = snapshot.docs.find(async doc => {
@@ -201,7 +201,7 @@ if (adminForm) {
                 quizsawaal: quizQuestion.value,
               }))
 
-              window.location.href = "./info.html";
+              window.location.href = "/pages/info.html";
             }
           }
         });
@@ -723,5 +723,4 @@ window.addEventListener('offline', () => {
 // Detect when user goes offline
 window.addEventListener('online', () => {
   document.getElementById("Offlne").classList.add("none")
-
 });
