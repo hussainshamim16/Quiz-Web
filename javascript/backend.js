@@ -150,37 +150,37 @@ if (adminForm) {
         const snapshot = await getDocs(colRefE);
         let checkDocument = snapshot.docs.find(async doc => { doc.data() })
 
-        // if (!checkDocument) {
-        //   await addDoc(collection(db, "teacherApprovel"), {
-        //     teacherName: teacherName.value,
-        //     courseName: courseName.value,
-        //     quizDuration: quizDuration.value,
-        //     quizQuestion: quizQuestion.value,
-        //     studentId: student.uid,
-        //     createdAt: new Date(),
-        //   })
+        if (!checkDocument) {
+          await addDoc(collection(db, "teacherApprovel"), {
+            teacherName: teacherName.value,
+            courseName: courseName.value,
+            quizDuration: quizDuration.value,
+            quizQuestion: quizQuestion.value,
+            studentId: student.uid,
+            createdAt: new Date(),
+          })
 
-        //   if (loader) {
-        //     loader.classList.add('none')
-        //   }
+          if (loader) {
+            loader.classList.add('none')
+          }
 
-        //   localStorage.setItem("teacherPermission", JSON.stringify({
-        //     mentorName: teacherName.value,
-        //     quizname: courseName.value,
-        //     quizseconds: quizDuration.value,
-        //     quizsawaal: quizQuestion.value,
-        //   }))
+          localStorage.setItem("teacherPermission", JSON.stringify({
+            mentorName: teacherName.value,
+            quizname: courseName.value,
+            quizseconds: quizDuration.value,
+            quizsawaal: quizQuestion.value,
+          }))
 
-        //   window.location.href = "/pages/info";
-        // }
+          window.location.href = "/pages/info";
+        }
 
-        // const pehlyYeQuizDeyDeaHEyStudentNey = snapshot.docs.find(async doc => {
+        const pehlyYeQuizDeyDeaHEyStudentNey = snapshot.docs.find(async doc => {
           if (doc.data().studentId === student.uid) {
-            // if (doc.data().courseName === courseName.value) {
-            //   showErrorMessage("This student has already attempted the quiz.")
-            //   // window.location.reload()
-            // }
-            // else {
+            if (doc.data().courseName === courseName.value) {
+              showErrorMessage("This student has already attempted the quiz.")
+              // window.location.reload()
+            }
+            else {
               await addDoc(collection(db, "teacherApprovel"), {
                 teacherName: teacherName.value,
                 courseName: courseName.value,
@@ -204,10 +204,10 @@ if (adminForm) {
               window.location.href = "/pages/info";
             }
           }
-        // });
+        });
 
 
-      catch (error) {
+      } catch (error) {
         showErrorMessage(error.code);
         // window.location.reload()
       }
@@ -217,7 +217,7 @@ if (adminForm) {
     }
   })
 }
-// }
+}
 
 // Info Box
 if (infobox) {
