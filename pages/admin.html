@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Quiz App</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+    <!-- ==================== Admin Penal ==================== -->
+    <div class="dashboard flex">
+        <!-- <div class="sidebar">
+            <div class="logo"></div>
+            <div class="routes"></div>
+            <div class="footer"></div>
+        </div> -->
+        <div class="mainScreen">
+            <div class="header flex">
+                <span>Muhammad</span>
+                <div class="profile">
+
+                </div>
+            </div>
+            <div class="content">
+                <h2>Wellcome Hussain <span id="hand">👋</span></h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, consequatur.</p>
+                <div class="boxes flex">
+                    <a href="./student.html" class="box students flex">
+                       
+                            <div class="studentsText">students</div>
+                            <div id="studentsCount">2</div>
+                       
+                    </a>
+                    <a href="./teachers.html"  class="box teachers flex">
+                        
+                            <div class="teachersText">teachers</div>
+                            <div id="teachersCount">5</div>
+                    
+                    </a>
+                    <a href="./quiz.html" class="box quizes flex">
+                
+                            <div class="quizesText">quizes</div>
+                            <div id="quizesCount">4</div>
+                        
+                    </a>
+                </div>
+                <div class="Hometable">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <td>Student</td>
+                                <td>Class</td>
+                                <td>Batch</td>
+                                <td>Teacher</td>
+                                <td>Registraion Date</td>
+                            </tr>
+                        </thead>
+                        <tbody id="renderAdminStudentInfo">
+                            <tr>
+                                <td><a href="./search.html?hussain">Hussain</a></td>
+                                <td><a href="/">WMA</a></td>
+                                <td><a href="/">01</a></td>
+                                <td><a href="/">Arzoo</a></td>
+                                <td>11/01/2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Offlne" class="flex none">
+        <div class="offlineBox">
+            <span class="errormessage">
+                😥
+                Your internet connection is lost. Please check your network.
+            </span>
+        </div>
+    </div>
+
+    <!-- <script src="../javascript/backend.js" type="module"></script> -->
+    <script>
+        let renderAdminStudentInfo = document.getElementById("renderAdminStudentInfo")
+        if (renderAdminStudentInfo) {
+            for (let i = 0; i <= 10; i++) {
+                renderAdminStudentInfo.innerHTML += `
+      <tr>
+        <td><a href="/">Hussain</a></td>
+        <td><a href="/">WMA</a></td>
+        <td><a href="/">01</a></td>
+        <td><a href="/">Arzoo</a></td>
+        <td>11/01/2026</td>
+    </tr>   
+    `
+
+            }
+        }
+    </script>
+</body>
+
+</html>

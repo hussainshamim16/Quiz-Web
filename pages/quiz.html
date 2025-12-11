@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Teachers</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+        <div class="dashboard flex">
+        <div class="mainScreen">
+            <div class="header flex">
+                <span>Muhammad</span>
+                <div class="profile"></div>
+            </div>
+
+            <div class="content">
+                <h2>Quiz Result <span id="hand">🥇</span></h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, consequatur.</p>
+                <div class="boxes flex">
+                    <a href="./admin.html" class="box students flex">
+                       
+                            <div class="studentsText">Admin</div>
+                            <div id="studentsCount">1</div>
+                       
+                    </a>
+                    <a href="./student.html"  class="box teachers flex">
+                        
+                            <div class="teachersText">Student</div>
+                            <div id="teachersCount">5</div>
+                    
+                    </a>
+                    <a href="./teachers.html" class="box quizes flex">
+                
+                            <div class="quizesText">Teachers</div>
+                            <div id="quizesCount">4</div>
+                        
+                    </a>
+                </div>
+                <div class="Hometable">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <td>Student Name</td>
+                                <td>Class</td>
+                                <td>Batch</td>
+                                <td>Teacher</td>
+                                <td>Result</td>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsPannel">
+                            <!-- <tr>
+                                <td><a href="/">Hussain</a></td>
+                                <td><a href="/">WMA</a></td>
+                                <td><a href="/">01</a></td>
+                                <td><a href="/">Arzoo</a></td>
+                                <td>11/01/2026</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+        <script>
+        let studentsPannel = document.getElementById("studentsPannel")
+        if (studentsPannel) {
+            for (let i = 1; i <= 2; i++) {
+                studentsPannel.innerHTML += `
+      <tr>
+        <td><a href="/">Nabiya</a></td>
+        <td><a href="/">WMA</a></td>
+        <td><a href="/">01</a></td>
+        <td><a href="/">Arzoo</a></td>
+        <td>88%</td>
+    </tr>   
+    `
+
+            }
+        }
+    </script>
+</body>
+
+</html>
