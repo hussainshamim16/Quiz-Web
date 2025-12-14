@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Firebase Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Firebase v9 -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+        // 🔥 YOUR FIREBASE CONFIG
+        const firebaseConfig = {
+            apiKey: "AIzaSyCtfLUtif4jaQ7Z34UDFgeH4Eb4isixE5c",
+            authDomain: "tacquizapp.firebaseapp.com",
+            projectId: "tacquizapp",
+            storageBucket: "tacquizapp.firebasestorage.app",
+            messagingSenderId: "941678635509",
+            appId: "1:941678635509:web:253f5065e81b1883e918bc"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const studentsBody = document.getElementById('studentsBody');
+        const teacherBody = document.getElementById('teacherBody');
+        const resultsBody = document.getElementById('resultsBody');
+
+        // ---------------- STUDENTS ----------------
+        async function loadStudents() {
+            const snap = await getDocs(collection(db, 'students'));
+            studentsBody.innerHTML = "";
+            snap.forEach(doc => {
+                const d = doc.data();
+                studentsBody.innerHTML += `
+          <tr>
+            <td>${d.Student_name}</td>
+            <td>${d.Student_email}</td>
+            <td>${d.Student_batch}</td>
+            <td>${d.Student_trainer}</td>
+          </tr>`;
+            });
+        }
+
+        // ---------------- TEACHER APPROVEL ----------------
+        async function loadTeacherApprovel() {
+
+            // 🔹 students ka map bana lo (uid → name)
+            const studentsSnap = await getDocs(collection(db, 'students'));
+            const studentMap = {};
+            studentsSnap.forEach(sdoc => {
+                studentMap[sdoc.id] = sdoc.data().Student_name;
+            });
+
+            // 🔹 teacherApprovel data
+            const q = query(
+                collection(db, 'teacherApprovel'),
+                orderBy('createdAt', 'desc')
+            );
+
+            const snap = await getDocs(q);
+            teacherBody.innerHTML = "";
+
+            snap.forEach(doc => {
+                const d = doc.data();
+                const studentName = studentMap[d.studentId] || "Unknown Student";
+
+                teacherBody.innerHTML += `
+      <tr>
+        <td>${d.teacherName}</td>
+        <td>${d.courseName}</td>
+        <td>${d.quizQuestion}</td>
+        <td>${d.quizDuration}s</td>
+        <td>${studentName}</td>
+      </tr>
+    `;
+            });
+        }
+
+
+        // ---------------- RESULTS ----------------
+        // ---------------- RESULTS ----------------
+        async function loadResults() {
+            const q = query(collection(db, 'Results'), orderBy('createdAt', 'desc'));
+            const snap = await getDocs(q);
+
+            // 🔹 pehle students ko map mey load karo (uid → name)
+            const studentsSnap = await getDocs(collection(db, 'students'));
+            const studentMap = {};
+            studentsSnap.forEach(sdoc => {
+                studentMap[sdoc.id] = sdoc.data().Student_name;
+            });
+
+            resultsBody.innerHTML = "";
+            snap.forEach(doc => {
+                const d = doc.data();
+                const percent = Math.round((d.StudentScore / d.QuizQuestion) * 100);
+                const studentName = studentMap[d.QuizStudent] || 'Unknown Student';
+
+                resultsBody.innerHTML += `
+          <tr>
+            <td>${studentName}</td>
+            <td>${d.QuizSubject}</td>
+            <td>${d.QuizTeacher}</td>
+            <td>${d.StudentScore}/${d.QuizQuestion}</td>
+            <td>${percent}%</td>
+          </tr>`;
+            });
+        }
+
+        loadStudents();
+        loadTeacherApprovel();
+        loadResults();
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px
+        }
+
+        section {
+            margin-bottom: 40px
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #020617;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #1e293b;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background: #1e293b
+        }
+
+        tr:hover {
+            background: #020617cc
+        }
+
+        .card {
+            background: #020617;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📊 Firebase Admin Dashboard</h1>
+
+    <!-- STUDENTS -->
+    <section class="card">
+        <h2>👨‍🎓 Students</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Batch</th>
+                    <th>Trainer</th>
+                </tr>
+            </thead>
+            <tbody id="studentsBody"></tbody>
+        </table>
+    </section>
+
+    <!-- TEACHER APPROVEL -->
+    <section class="card">
+        <h2>🧑‍🏫 Teacher Approvals</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Teacher</th>
+                    <th>Course</th>
+                    <th>Questions</th>
+                    <th>Duration</th>
+                    <th>Student Name</th>
+                </tr>
+            </thead>
+            <tbody id="teacherBody"></tbody>
+        </table>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="card">
+        <h2>🏆 Quiz Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                    <th>Teacher</th>
+                    <th>Score</th>
+                    <th>Percent</th>
+                </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>

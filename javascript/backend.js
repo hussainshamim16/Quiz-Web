@@ -164,7 +164,7 @@ if (adminForm) {
           // ❌ agar pehle se quiz diya hua hai
           if (alreadyAttempted) {
             if (loader) loader.classList.add('none');
-            showErrorMessage("Ye student is course ka quiz pehle hi de chuka hai.");
+            showErrorMessage("This student has already taken the course quiz.");
             return;
           }
 
