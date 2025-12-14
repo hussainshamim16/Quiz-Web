@@ -35,7 +35,7 @@ import { questions } from "./question.js";
 // SIGNUP
 if (signupForm) {
   if (studentR) {
-    window.location.href = "/pages/teacher-permission";
+    window.location.href = "/pages/teacher-permission.html";
   }else{
   signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -71,7 +71,7 @@ if (signupForm) {
 
       if (loader) loader.classList.add('none');
 
-      window.location.href = "/pages/teacher-permission";
+      window.location.href = "/pages/teacher-permission.html";
 
     } catch (error) {
       showErrorMessage(error.code);
@@ -83,7 +83,7 @@ if (signupForm) {
 // LOGIN
 if (loginForm) {
   if (studentR) {
-    window.location.replace("/pages/teacher-permission");
+    window.location.replace("/pages/teacher-permission..html");
   }else{
   loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -113,7 +113,7 @@ if (loginForm) {
       }
 
       if (loader) loader.classList.add('none');
-      window.location.href = "/pages/Teacher-Permission";
+      window.location.href = "/pages/teacher-permission.html";
 
     } catch (error) {
       showErrorMessage(error.code)
@@ -171,7 +171,7 @@ if (adminForm) {
             quizsawaal: quizQuestion.value,
           }))
 
-          window.location.href = "/pages/info";
+          window.location.href = "/pages/info.html";
         // }
 
         // const pehlyYeQuizDeyDeaHEyStudentNey = snapshot.docs.find(async doc => {
@@ -234,7 +234,7 @@ if (infobox) {
 }
 
 // quiz Screen
-if (window.location.pathname === "/pages/quiz-start") {
+if (window.location.pathname === "/pages/quiz-start.html") {
     if(!studentR){
     window.location = '../index.html'
   }else{
@@ -280,7 +280,7 @@ if (window.location.pathname === "/pages/quiz-start") {
       if (!studentR || !studentR.uid) {
         showErrorMessage("Student not logged in.");
         setTimeout(() => {
-          window.location = '../index'
+          window.location = '../index.html'
         }, 2000);
         return null;
       }
@@ -418,7 +418,7 @@ if (window.location.pathname === "/pages/quiz-start") {
           loader.classList.add('none')
         }
 
-        window.location = '/pages/result'
+        window.location = '/pages/result.html'
       }
     });
   }
@@ -556,7 +556,7 @@ if (window.location.pathname === "/pages/quiz-start") {
 }
 
 // Result Of Quiz
-if (window.location.pathname === "/pages/result") {
+if (window.location.pathname === "/pages/result.html") {
     if(!studentR){
     window.location = '../index.html'
   }else{
